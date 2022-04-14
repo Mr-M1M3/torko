@@ -58,7 +58,7 @@ prefixed with `-` goes under `flags`.
 |callback   | Function | Required |
 
 Both th functions support unlimited number of parameters. However, parameters after `<callback>`
-will passed as an parameter of `<callback>`
+will passed as an parameter of `<callback>`. But, the third parameter of `.arguments()` callback receives is the value of `<arg>` passed from command-line.
 
 
 ## Authors
