@@ -1,6 +1,6 @@
 {
   "name": "torko",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Parsing & Adding command-line arguments made easier than ever",
   "main": "index.js",
   "repository": "https://github.com/Mr-M1M3/torko.git",

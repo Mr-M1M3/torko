@@ -10,57 +10,59 @@ Install torko with npm
 ```bash
   npm install torko
 ```
-    
-## API Reference
+ ## API Reference
 
 ### Initilize
 
 ```javascript
-// index.js
-  const args = require('torko')(); // requires and calls torko.
-  console.log(args); // you can then get all the arguments or flags.
-```
-#### `Running the above code with arguments '--port 8080' will print the following`
+//index.js
 
-```javascript
-{ flags: [ 'dev' ], arguments: { port: '8080' } }
+const args = require('torko')(); // requires and calls "torko"
+console.log(args);
 ```
 
-Now you can access the args just like an regular javascript object.
+Now, calling the above code from terminal,
 
-If you've noticed, the output object has two properties, `flags` and `arguments`. Curious about
-the difference between them? Well, in `torko`, args prefixed with `--` goes under `arguments` and args 
-prefixed with `-` goes under `flags`.
+```bash
+node index.js --port 8080 -dev
+```
 
-| Arg | Prefix    | Type                       |
-| :-------- | :------- | :-------------------------------- |
-| `--port`  | `--` | **argument** |
-| `-dev`    | `-` | **flag** |
+This will output something like the following: 
 
+```bash
+{
+
+  flags: Flags { flags: [ 'dev' ] },
+
+  arguments: Args { arguments: { port: '8080' } }
+
+}
+```
+Let's refractor what we got,
+
+- **`flags`**: Constructed using `Flags` class. This contains an array of arguments that are prefixed with `-`. Usually, flags are `boolean` meaning flags doesn't contain values. Now, you know why `flags` is an array! Following example shows how you pass flags.
+```bash
+-flag
+```
+
+- **`arguments`**: Constructed using `Args` constriuctor. Conatins key:value pairs of the arguments passed. Arguments are passed by prefixing `--`. You pass arguments value like so:
+```bash
+--argument value
+```
 ### Methods
 
-## Executes callback, if <flag> is passed as a flag
-```javascript
-.flags.on(<flag>, <callback>); // you don't prefix '<flag>' with '-'
+Both `flags` and `arguments` torko provides you some methods to decrease your pain in the ass. torko follows method chaining pattern for better usability.
+
+**`.flags.for(<flag>).call(<fn>)`**:`
 ```
-| Parameter | Type     | Required |
-| :---------|:---------|:---------|
-|flag       | String   | Required |
-|callback   | Function | Required |
-
-## Executes callback, if <arg> is passed as a argument
-```javascript
-.arguments.on(<arg>, <callback>); // you don't prefix '<arg>' with '--'
+Calls `fn` if <flag> is passed as an flag.
 ```
-| Parameter | Type     | Required |
-| :---------|:---------|:---------|
-|arg       | String   | Required |
-|callback   | Function | Required |
 
-Both th functions support unlimited number of parameters. However, parameters after `<callback>`
-will passed as an parameter of `<callback>`. But, the third parameter of `.arguments()` callback receives is the value of `<arg>` passed from command-line.
-
-
+-  **`arguments.for(<arg>).call(<fn>)`**:
+```
+Calls `fn` if <arg> is passed as an argument
+with the value of the <arg> parameter as a parameter.
+```
 ## Authors
 
 - [@mr-m1m3](https://www.github.com/mr-m1m3)
