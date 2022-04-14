@@ -45,7 +45,7 @@ Let's refractor what we got,
 -flag
 ```
 
-- **`arguments`**: Constructed using `Args` constriuctor. Conatins key:value pairs of the arguments prefixed with`--`. You pass command-line arguments value like so:
+- **`arguments`**: Constructed using `Args` constriuctor. Conatins key:value pairs of the arguments prefixed with`--`. You pass command-line arguments like so:
 ```bash
 --argument value
 ```
@@ -53,12 +53,12 @@ Let's refractor what we got,
 
 Both `flags` and `arguments` torko provides you some methods to decrease your pain in the ass. torko follows method chaining pattern for better usability.
 
-**`.flags.for(<flag>).call(<fn>)`**:`
+- **`.flags.for(<flag>).call(<fn>)`**:`
 ```
 Calls `fn` if <flag> is passed as an flag.
 ```
 
--  **`arguments.for(<arg>).call(<fn>)`**:
+-  **`.arguments.for(<arg>).call(<fn>)`**:
 ```
 Calls `fn` if <arg> is passed as an argument
 with the value of the <arg> parameter as a parameter.
