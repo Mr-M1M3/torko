@@ -1,9 +1,17 @@
 {
   "name": "torko",
   "version": "1.0.0",
-  "description": "Parsing & Adding command-line arguments made easier more than ever",
+  "description": "Parsing & Adding command-line arguments made easier than ever",
   "main": "index.js",
   "repository": "https://github.com/Mr-M1M3/torko.git",
   "author": "Mr-M1M3",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "node-cli",
+    "arguments",
+    "flags",
+    "torko",
+    "obboy"
+  ]
 }
