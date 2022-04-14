@@ -45,7 +45,7 @@ Let's refractor what we got,
 -flag
 ```
 
-- **`arguments`**: Constructed using `Args` constriuctor. Conatins key:value pairs of the arguments passed. Arguments are passed by prefixing `--`. You pass arguments value like so:
+- **`arguments`**: Constructed using `Args` constriuctor. Conatins key:value pairs of the arguments prefixed with`--`. You pass command-line arguments value like so:
 ```bash
 --argument value
 ```
