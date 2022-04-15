@@ -50,7 +50,7 @@ torko.handle().command('start').by(() => {
 
 Gets port number
 ```javascript
-const troko = require('torko')();
+const torko = require('torko')();
 
 torko.handle().arg('port').by(port_number => {
   console.log(port);
@@ -59,7 +59,7 @@ torko.handle().arg('port').by(port_number => {
 
 Checks whether server shiuld be ran in production mode
 ```javascript
-const troko = require('torko')();
+const torko = require('torko')();
 
 torko.handle().flag('production').by(()=> {
   console.log('starting server in production');
