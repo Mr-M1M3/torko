@@ -57,7 +57,7 @@ torko.handle().arg('port').by(port_number => {
 });
 ```
 
-Checks whether server shiuld be ran in production mode
+Checks whether server should listen in production mode
 ```javascript
 const torko = require('torko')();
 
